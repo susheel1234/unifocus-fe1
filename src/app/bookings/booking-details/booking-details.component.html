@@ -1,0 +1,15 @@
+<div class="box-container" *ngIf="seatDetails">
+  <span *ngFor="let item of [].constructor(seatDetails.total_row); let i = index;">
+    <span *ngIf="i<11">
+      <span *ngFor="let item of [].constructor(seatDetails.seat_per_row); let j = index;">
+        <button [style.backgroundColor]="getSeatColour(i, j)" (click)="bookSeat(7*i+j)">seat {{7*i+j}}</button>
+      </span>
+    </span>
+    <span *ngIf="i==11">
+      <span *ngFor="let item of [].constructor(3); let j = index;">
+        <button [style.backgroundColor]="getSeatColour(i, j)" (click)="bookSeat(7*i+j)">seat {{7*i+j}}</button>
+      </span>
+    </span>
+    <br>
+</span>
+</div>
